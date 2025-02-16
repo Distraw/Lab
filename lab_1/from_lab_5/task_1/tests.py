@@ -1,5 +1,5 @@
 import unittest
-from lab_5 import calculate_annual_increase
+from region import calculate_annual_increase
 
 class TestCalculateAnnualIncrease(unittest.TestCase):
     def test_increasing_values(self):
