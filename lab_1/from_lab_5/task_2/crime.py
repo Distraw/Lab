@@ -12,7 +12,7 @@ def get_crime_data():
 
     return data, sentence_name
 
-def get_max_increase(data, sentence_name):
+def get_max_increase(data):
     rows = len(data)
 
     max_increase = (data[0][len(data[0]) - 1] - data[0][0]) / data[0][0]
