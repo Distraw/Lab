@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from unittest.mock import patch
 
-from lab_2.numpy_operations import inputarray
+from lab_2.numpy_operations import input_numpy_array
 from numpy_operations import get_elements_occuring_in_range_from_n_to_x_times
 
 class TestGetElementsOccuringInRangeFromNToXTimes(unittest.TestCase):
@@ -28,15 +28,15 @@ class TestGetElementsOccuringInRangeFromNToXTimes(unittest.TestCase):
             np.testing.assert_array_equal(get_elements_occuring_in_range_from_n_to_x_times(
                 np.array([]), 1, 5), np.array([]))
 
-class TestInputArray(unittest.TestCase):
+class TestInputNumpyArray(unittest.TestCase):
     @patch("builtins.input", side_effect=["4", "1", "2", "3", "4"])
     def test_input_array(self, mock_input):
-        np.testing.assert_array_equal(inputarray(), np.array([1, 2, 3, 4]))
+        np.testing.assert_array_equal(input_numpy_array(), np.array([1, 2, 3, 4]))
 
     @patch("builtins.input", side_effect=["hello friend", "1", "2", "3", "4"])
     def test_invalid_input(self, mock_input):
         with self.assertRaises(ValueError):
-            inputarray()
+            input_numpy_array()
 
 if __name__ == '__main__':
     unittest.main()

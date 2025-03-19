@@ -4,7 +4,7 @@ import numpy_operations as npo
 
 while True:
     try:
-        arr = npo.inputarray()
+        arr = npo.input_numpy_array()
         break
     except ValueError:
         print(ValueError)
