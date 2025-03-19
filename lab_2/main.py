@@ -1,5 +1,3 @@
-from warnings import catch_warnings
-
 import numpy_operations as npo
 
 while True:
