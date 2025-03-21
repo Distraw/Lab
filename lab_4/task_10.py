@@ -9,7 +9,7 @@ def print_environment():
 
 def print_environment_variable(variable: str):
     if os.environ.get(variable) is None:
-        print('No such variable in the environment')
+        print('No such variable in the environment: ', variable, file = sys.stderr)
         return
 
     print(variable, ': ', os.environ.get(variable))
@@ -32,7 +32,7 @@ def delete_environment_variable(variable: str):
         del os.environ[variable]
         print(variable, ' was deleted')
     else:
-        print(variable, ' does not exist')
+        print(variable, ' does not exist', file = sys.stderr)
 
 def clear_environment():
     os.environ.clear()
