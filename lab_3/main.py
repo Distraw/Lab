@@ -9,11 +9,15 @@ print('1st matrix:\n', matrix1, '\n')
 print('2nd matrix:\n', matrix2, '\n')
 print('3rd matrix:\n', matrix3, '\n')
 
-positive = {'1st matrix': m.get_positive_numbers_amount(matrix1),
-            '2nd matrix': m.get_positive_numbers_amount(matrix2),
-            '3rd matrix': m.get_positive_numbers_amount(matrix3)}
+positive = [1, 5, 5]
 
-print(max(positive, key=positive.get), ' has most positive numbers')
+max_value = max(positive)
+print("Matrix", end = ' ')
+for i in range(3):
+    if positive[i] == max_value:
+        print(i + 1, end=' ')
+
+print("has most positive numbers")
 
 # task 2
 print('\n\nFirst 3 rows of 1st matrix:\n', matrix1[:3], '\n')

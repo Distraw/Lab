@@ -1,31 +1,25 @@
-import pandas as pd
-import numpy as np
-import time
+import torch
 
-def do_test(count: int):
-    df1 = pd.DataFrame({'weight': np.random.random(count)})
+# 1 task
+my_tensor = torch.randint(0, 100, (10, 5))
+new_tensor = my_tensor[my_tensor > my_tensor.mean(dtype=torch.float32)]
 
-    start_time = time.perf_counter()
+print("Оригінальний тензор: ", my_tensor)
+print("Середнє значення: ", my_tensor.mean(dtype=torch.float32))
+print("Фінальний тензор: ", new_tensor)
 
-    max_id = df1['weight'].idxmax()
+# 2 task
+print("\n\n\n\n")
+tensor1 = torch.randint(0, 100, (5, 5))
+tensor2 = torch.randint(0, 100, (5, 5))
 
-    end_time = time.perf_counter()
-    internal_func_time = end_time - start_time
-
-    start_time = time.perf_counter()
-
-    max_arg_id = 0
-    row = df1['weight']
-    for i in range(1, len(row)):
-        if row[i] > row[max_arg_id]:
-            max_arg_id = i
-
-    end_time = time.perf_counter()
-    external_func_time = end_time - start_time
-
-    print('Вбудована функція на ', count, ' кількості: ', internal_func_time)
-    print('Наша функція на ', count, ' кількості: ', external_func_time)
+mask1 = tensor1 < tensor2
+mask2 = tensor1 > tensor2
 
 
-do_test(100)
-do_test(1_000_000)
+tensor_t1 = tensor1.masked_fill(mask1, 0)
+tensor_t2 = tensor1.masked_fill(~mask2, 0)
+# ~true = false ~false = true
+
+print("t1: ", tensor1)
+print("t2: ", tensor1)
