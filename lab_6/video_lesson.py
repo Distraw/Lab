@@ -7,8 +7,6 @@ class VideoLesson(CourseMaterial):
     def __init__(self, _id: int, name: str, duration: timedelta, url: str):
         super().__init__(_id, name)
 
-        self._id = _id
-        self._name = name
         self._duration = duration
         self._url = url
 
