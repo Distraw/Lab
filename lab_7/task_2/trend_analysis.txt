@@ -1,0 +1,20 @@
+Beauty & Health     27051.71
+Books               25934.36
+Charity             24562.68
+Clothing            32183.81
+Education           21045.01
+Electronics         43861.83
+Entertainment       38382.27
+Freelance Income    33873.10
+Gadgets             23352.22
+Gifts               27634.62
+Groceries           32644.14
+Healthcare          21282.82
+Investments         33944.68
+Rent                37202.39
+Restaurant          31920.12
+Salary              27623.38
+Sports              14895.22
+Transportation      40142.49
+Travel              25316.47
+Utilities           32457.83
